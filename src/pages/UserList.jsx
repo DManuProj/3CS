@@ -1,50 +1,26 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./UserList.css";
 import UserCard from "../components/UserCard";
 
 const UserList = () => {
-  const users = [
-    {
-      id: "u1",
-      fname: "Dulana",
-      Lname: "wanigathunga",
-      imgUrl:
-        "https://dulanawanigathunga-e05ae.web.app/static/media/profile2.24e1be83a4a26f15825d.png",
-      email: "dulana@@gmail.com",
-    },
-    {
-      id: "u2",
-      fname: "Dulana",
-      Lname: "wanigathunga",
-      imgUrl:
-        "https://dulanawanigathunga-e05ae.web.app/static/media/profile2.24e1be83a4a26f15825d.png",
-      email: "dulana@@gmail.com",
-    },
-    {
-      id: "u3",
-      fname: "Dulana",
-      Lname: "wanigathunga",
-      imgUrl:
-        "https://dulanawanigathunga-e05ae.web.app/static/media/profile2.24e1be83a4a26f15825d.png",
-      email: "dulana@@gmail.com",
-    },
-    {
-      id: "u4",
-      fname: "Dulana",
-      Lname: "wanigathunga",
-      imgUrl:
-        "https://dulanawanigathunga-e05ae.web.app/static/media/profile2.24e1be83a4a26f15825d.png",
-      email: "dulana@@gmail.com",
-    },
-    {
-      id: "u5",
-      fname: "Dulana",
-      Lname: "wanigathunga",
-      imgUrl:
-        "https://dulanawanigathunga-e05ae.web.app/static/media/profile2.24e1be83a4a26f15825d.png",
-      email: "dulana@@gmail.com",
-    },
-  ];
+  const [userData, setUserData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const fetchMoviesHandler = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+
+    const response = await fetch("https://reqres.in/api/users?page=1");
+
+    const { data } = await response.json();
+    setUserData(data);
+    console.log(userData);
+  }, []);
+
+  useEffect(() => {
+    fetchMoviesHandler();
+  }, [fetchMoviesHandler]);
 
   return (
     <div className="container">
@@ -62,12 +38,12 @@ const UserList = () => {
             margin: "auto",
           }}
         >
-          {users.map((user) => (
+          {userData.map((user) => (
             <UserCard
               key={user.id}
-              fname={user.fname}
+              fname={user.first_name}
               email={user.email}
-              profileImg={user.imgUrl}
+              profileImg={user.avatar}
             />
           ))}
         </div>
