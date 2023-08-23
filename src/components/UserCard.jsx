@@ -5,7 +5,7 @@ const UserCard = (props) => {
     <div className=" col-sm-6 col-xs-12 col-md-6 col-lg-4 center ">
       <div
         className="card mt-5 min-width-200 p-2   "
-        style={{ width: "18rem" }}
+        style={{ width: "18rem", cursor: "pointer" }}
       >
         <div className="center  profile">
           <img

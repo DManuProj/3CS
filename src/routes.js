@@ -8,7 +8,7 @@ export const router = createBrowserRouter([
     element: <UserList />,
   },
   {
-    path: "/view-user",
+    path: "/view-user/:userId",
     element: <UserDetails />,
   },
 ]);
