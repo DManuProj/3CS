@@ -3,3 +3,27 @@
   justify-content: center;
   align-items: center;
 }
+
+/* Default font size for all screen sizes */
+.font-size-email {
+  font-size: 16px;
+}
+
+/* Media query for medium screens (up to 576px) */
+@media (max-width: 992px) {
+  .font-size-email {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .font-size-email {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .font-size-email {
+    font-size: 15px;
+  }
+}

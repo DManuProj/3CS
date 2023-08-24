@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./UserList.css";
-import UserCard from "../components/UserCard";
 import Users from "../components/Users";
 
 const UserList = () => {
@@ -33,8 +32,11 @@ const UserList = () => {
 
   return (
     <div className="container">
-      <div className="btn btn-primary w-100 mt-5">
-        <p>Title</p>
+      <div
+        style={{ height: "30px" }}
+        className=" text-center align-center  text-white  bg-primary w-100 mt-5"
+      >
+        <p>Users List</p>
       </div>
 
       <div className="container ">
@@ -43,7 +45,7 @@ const UserList = () => {
           className="container row  "
           style={{
             width: "80%",
-            background: "green",
+
             margin: "auto",
           }}
         >

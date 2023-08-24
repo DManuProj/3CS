@@ -33,32 +33,42 @@ const UserDetails = () => {
   }, [fetchUsersHandler]);
 
   return (
-    <div className="container">
-      <div className="btn btn-primary w-100 mt-5">
-        <Link to="/" className="btn btn-primary w-100">
-          Back
-        </Link>
-      </div>
-
-      <div className="container d-flex mt-5 justify-content-evenly">
-        <div className="center col-2   profile">
-          <img
-            src={userData.avatar}
-            className="card-img-top profile-img  "
-            alt="..."
-          />
+    <div>
+      <div className="container">
+        <div className="btn btn-primary w-100 mt-5">
+          <Link to="/" className="btn btn-primary w-100">
+            Back
+          </Link>
         </div>
-        <div className="card col-4 ">
-          <div className="card-body d-flex justify-content-evenly align-items-center">
-            <div className="">
-              <p className="card-text">First Name </p>
-              <p className="card-text">Last Name :</p>
-              <p className="card-text">Email :</p>
+
+        <div className="container mt-5">
+          <div className="row justify-content-center ">
+            <div className="col-12 col-md-4 col-lg-3 text-center">
+              <div className="center profile">
+                <img
+                  src={userData.avatar}
+                  className="card-img-top profile-img"
+                  alt={userData.first_name}
+                />
+              </div>
             </div>
-            <div className="">
-              <p className="card-text">{userData.first_name}</p>
-              <p className="card-text">{userData.last_name}</p>
-              <p className="card-text">{userData.email}</p>
+            <div className="mt-sm-5 mt-3 mt-md-0 col-12 col-md-8 col-lg-6 d-flex flex-column justify-content-center align-center ">
+              <div className="card d-flex ">
+                <div className="card-body">
+                  <div className="d-flex justify-content-evenly">
+                    <div>
+                      <p className="card-text">First Name:</p>
+                      <p className="card-text">Last Name:</p>
+                      <p className="card-text">Email:</p>
+                    </div>
+                    <div className="text-left">
+                      <p className="card-text">{userData.first_name}</p>
+                      <p className="card-text">{userData.last_name}</p>
+                      <p className="card-text">{userData.email}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

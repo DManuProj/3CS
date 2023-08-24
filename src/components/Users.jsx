@@ -6,18 +6,12 @@ const Users = (props) => {
   return (
     <>
       {props.userData.map((user) => (
-        <Link
-          to={{
-            pathname: `/view-user/${user.id}`,
-          }}
-          key={user.id}
-        >
-          <UserCard
-            fname={user.first_name}
-            email={user.email}
-            profileImg={user.avatar}
-          />
-        </Link>
+        <UserCard
+          userId={user.id}
+          fname={user.first_name}
+          email={user.email}
+          profileImg={user.avatar}
+        />
       ))}
     </>
   );
